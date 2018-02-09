@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -e
+
+apt-get update
+apt-get install wget -y
+
+mkdir datafiles
+cd datafiles
+
+wget "${BASE_URL}${KEY_ABBREVIATION_FILE}"
+wget "${BASE_URL}${BASE_DATA_FILE}"
+wget "${BASE_URL}${UPDATE_FILE}"
+
