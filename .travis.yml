@@ -5,3 +5,6 @@ services:
 
 before_install:
   - docker build .
+
+script:
+  - docker run .
