@@ -7,4 +7,4 @@ before_install:
   - docker build . -t chinkitp/luke-test
 
 script:
-  - docker run chinkitp/luke-test
+  - docker run -d chinkitp/luke-test
