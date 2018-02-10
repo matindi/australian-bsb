@@ -6,4 +6,5 @@ ENV BASE_DATA_FILE 'BSBDirectoryOct17-259.csv'
 ENV UPDATE_FILE 'BSB Directory Update 02Nov17-01Dec17.csv'
 
 ADD setup /
+ADD docker-entrypoint-initdb.d /docker-entrypoint-initdb.d
 RUN /setup

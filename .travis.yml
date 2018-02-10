@@ -4,7 +4,7 @@ services:
   - docker
 
 before_install:
-  - docker build . -t chinkitp/luke-test
+  - docker build . -t chinkitp/australian-bsb
 
 script:
-  - docker run -d chinkitp/luke-test
+  - docker run -d chinkitp/australian-bsb
