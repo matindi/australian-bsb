@@ -12,4 +12,3 @@ wget "${BASE_URL}${KEY_ABBREVIATION_FILE}"
 wget "${BASE_URL}${BASE_DATA_FILE}"
 wget "${BASE_URL}${UPDATE_FILE}"
 
-psql --help
