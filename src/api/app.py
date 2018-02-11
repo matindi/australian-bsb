@@ -1,5 +1,16 @@
+import psycopg2
+
 from flask import Flask
 app = Flask(__name__)
+
+try:
+    conn = psycopg2.connect("dbname='AustralianBsb_Db' user='postgres' host='db'")
+except:
+    print "I am unable to connect to the database"
+
+cur = conn.cursor()
+cur.execute("""SELECT count(*) from bsbdirectory""")
+rows = cur.fetchall()
 
 @app.route("/")
 def index():
