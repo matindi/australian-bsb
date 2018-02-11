@@ -3,8 +3,5 @@ sudo: required
 services:
   - docker
 
-before_install:
-  - docker build ./src/db -t chinkitp/australian-bsb-db
-
 script:
-  - docker run -d chinkitp/australian-bsb-db
+  - docker-compose up
