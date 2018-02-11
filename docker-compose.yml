@@ -9,6 +9,8 @@ services:
       context: ./src/api
     ports:
       - "3000:3000"
+    volumes:
+      - ./src/api/:/code
     depends_on:
       - "db"
   
