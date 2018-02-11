@@ -5,7 +5,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 const Sequelize = require('sequelize');
  
 
-const sequelize = new Sequelize('postgres://postgres@db:5432/AustralianBsb_Db');
+const sequelize = new Sequelize('postgres://postgres@db:5432/australianbsb_db');
 
 sequelize
     .authenticate()
