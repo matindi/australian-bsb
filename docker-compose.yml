@@ -14,3 +14,10 @@ services:
     depends_on:
       - "db"
   
+  web:
+    build:
+      context: ./src/web
+    ports:
+      - "9000:9000"
+    depends_on:
+      - "api"
