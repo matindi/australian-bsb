@@ -1,0 +1,13 @@
+version: '3'
+services:
+  db:
+    build:
+      context: ./src/db
+  
+  api:
+    build: 
+      context: ./src/api
+    ports:
+      - "5000:5000"
+    depends_on:
+      - "db"
