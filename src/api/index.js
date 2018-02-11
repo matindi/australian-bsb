@@ -18,13 +18,11 @@ sequelize
             });
         });
 
-        app.get('/bsbDirectory', function (req, res) {
+        app.get('/bsbdirectory', function (req, res) {
             sequelize.query("SELECT * from BsbDirectory").spread((results, metadata) => {
                 // Results will be an empty array and metadata will contain the number of affected rows.
                 // console.log(results)
-                res.json({
-                    response : results
-                });
+                res.json(results);
               }).catch(function (err) {
                 // handle error;
                 res.send(JSON.stringify(err.toString()))
@@ -37,6 +35,3 @@ sequelize
     .catch(err => {
         console.error('Unable to connect to the database:', err);
     });
-
-
-
