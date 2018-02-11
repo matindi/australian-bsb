@@ -1,3 +1,38 @@
 @model string 
 
-<h1>@Model</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+    <table data-pagination="true" data-search="true" data-toggle="table" data-url="home/BsbDirectory">
+    <thead>
+        <tr>
+            <th data-sortable="true" data-field="bsb">BSB</th>
+            <th data-field="bankcode">Bank Code</th>
+            <th data-field="addressline1">Address Line 1</th>
+            <th data-field="addressline2">Address Line 2</th>
+            <th data-field="suburb">Suburb</th>
+            <th data-field="state">State</th>
+            <th data-field="postcode">Postcode</th>
+        </tr>
+    </thead>
+</table>
+</div>
+
+</body>
+</html>
