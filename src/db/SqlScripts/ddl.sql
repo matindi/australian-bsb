@@ -1,6 +1,8 @@
 CREATE DATABASE AustralianBsb_Db;
 
-CREATE TABLE KEYABBREVIATIONS
+\c australianbsb_db;
+
+CREATE TABLE KeyAbbreviations
 (
     BankCode VARCHAR(3) NOT NULL, 
     BankName VARCHAR(500) NOT NULL,
