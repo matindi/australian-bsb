@@ -1,6 +1,42 @@
-const express = require('express')
-const app = express()
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
+const Sequelize = require('sequelize');
+ 
 
-app.get('/', (req, res) => res.send('Hello World!....222 3333'))
+const sequelize = new Sequelize('postgres://postgres@db:5432/australianbsb_db');
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+sequelize
+    .authenticate()
+    .then(() => {
+        console.log('Connection has been established successfully.');
+
+        app.get('/', function (req, res) {
+            res.json({
+                response : "Successfully connected"
+            });
+        });
+
+        app.get('/bsbDirectory', function (req, res) {
+            sequelize.query("SELECT * from BsbDirectory").spread((results, metadata) => {
+                // Results will be an empty array and metadata will contain the number of affected rows.
+                // console.log(results)
+                res.json({
+                    response : results
+                });
+              }).catch(function (err) {
+                // handle error;
+                res.send(JSON.stringify(err.toString()))
+              });
+        });
+
+        app.listen(3000);
+
+    })
+    .catch(err => {
+        console.error('Unable to connect to the database:', err);
+    });
+
+
+
